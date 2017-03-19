@@ -90,7 +90,7 @@ def toggle_buttons():
 	for button in buttons:
 		button.config(state=new_state)
 
-# Trying to fix image resource issure..
+# Need this to fix pyinstaller --onefile issue...
 if hasattr(sys, '_MEIPASS'):
     os.chdir(sys._MEIPASS)
 
@@ -101,7 +101,7 @@ window.geometry('680x480')
 window.configure(bg=PURPLE)
 
 # Create widgets
-img = PhotoImage(file='purple_carrots.gif')
+img = PhotoImage(file='imgs/purple_carrots.gif')
 l_logo = Label(window, image=img, borderwidth=0, highlightthickness=0)
 l_logo.image = img
 l_spacer_vert1 = Label(window, text="", width=3, bg=PURPLE)

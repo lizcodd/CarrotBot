@@ -14,7 +14,7 @@ a = Analysis(['cb_frontend.py'],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
              cipher=block_cipher)
-a.datas += [('purple_carrots.gif', 'C:\\Code\\PurpleCarrot\\purple_carrots.gif', 'DATA')]
+a.datas += [('imgs\\purple_carrots.gif', 'C:\\Code\\PurpleCarrot\\imgs\\purple_carrots.gif', 'DATA')]
 
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
