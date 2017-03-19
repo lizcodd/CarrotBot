@@ -1,12 +1,16 @@
-CarrotBot
-Liz Codd, 03/18/2017
-lizcodd AT gmail.com
+# CarrotBot
+-----------
+
+WHO & WHEN
 ----------
+
+Liz Codd, 03/18/2017
+lizcodd@gmail.com
 
 WHAT
 ----
 
-A GUI database program (written with Python 3 and using tkinter for the GUI, sqlite3 for the databases) to manage
+A GUI database program (written with Python 3 using tkinter for the GUI, sqlite3 for the databases) to manage
 webscraped recipes from PurpleCarrot.com.
 
 WHY
@@ -21,8 +25,8 @@ in a new tab of their default browser.
 
 HOW
 ---
-For Windows users, just download and run cb_frontend.exe (found in the dist folder)
-Otherwise, cb_frontend.py is the main python file so run that. It imports cb_backend.py 
+For Windows users, just download and run cb_frontend.exe (found in the dist folder).
+Otherwise, cb_frontend.py is the main python file so run that. It imports cb_backend.py.
 
 TIPS
 ---
@@ -30,4 +34,4 @@ TIPS
 1.) Click 'Update Database' to sync your local database with PurpleCarrot.com's archives (takes several seconds).
 It is recommended to do this weekly as that is how often PurpleCarrot updates their recipes.
 
-2.) Use the singular form of keywords to get more results (instead of searching for 'carrots' try 'carrot')
+2.) Use the singular form of keywords to get more results (instead of searching for 'carrots' try 'carrot').
