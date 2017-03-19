@@ -4,6 +4,8 @@
 import sqlite3, requests
 from bs4 import BeautifulSoup
 
+MAX_PAGES = 1000
+
 # A database to store the user's favorite recipes
 class Fav_Recipes():
 
@@ -53,7 +55,7 @@ class All_Recipes():
 		self.cur.execute("DELETE FROM recipes")
 		base_url = 'http://www.purplecarrot.com'
 		# Go thru all pages of recipes and scrape them, then store results in the database
-		for i in range(1, 100 + 1):
+		for i in range(1, MAX_PAGES):
 			r = requests.get(base_url + '/plant-based-recipes?page=' + str(i))
 			c = r.content
 			soup = BeautifulSoup(c, 'html.parser')
@@ -67,6 +69,9 @@ class All_Recipes():
 				self.cur.execute("INSERT INTO recipes VALUES(?, ?)", (name, link))
 				num_recipes += 1
 		# Remove duplicates (Purple Carrot seems to have some duplicate recipe names but with different links)
+		self.cur.execute("SELECT * FROM recipes WHERE rowid NOT IN (SELECT MIN(rowid) FROM recipes GROUP BY name)")
+		duplicates = self.cur.fetchall()
+		num_recipes -= len(duplicates)
 		self.cur.execute("DELETE FROM recipes WHERE rowid NOT IN (SELECT MIN(rowid) FROM recipes GROUP BY name)")
 		self.db.commit()
 		return num_recipes
