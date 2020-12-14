@@ -4,8 +4,8 @@
 WHO & WHEN
 ----------
 
-Liz Codd, 03/18/2017
-lizcodd@gmail.com
+Liz Codd, 03/18/2017 <br>
+lizcodd@gmail.com <br>
 NOTE, 12/14/2020: Purple Carrot has redesigned their website since 2017. While fun and useful at the time, this app is now non-functional and not worth updating as Purple Carrot has included a recipe search feature in their new design. Just leaving it up as an example of one of my first Python projects.
 
 WHAT
